@@ -1,8 +1,8 @@
 <?php
-namespace MyPlot\task;
+namespace SkyBlock\task;
 
-use MyPlot\MyPlot;
-use MyPlot\Plot;
+use SkyBlock\SkyPlot;
+use SkyBlock\Plot;
 use pocketmine\block\Block;
 use pocketmine\math\Vector3;
 use pocketmine\Player;
@@ -14,7 +14,7 @@ class ClearPlotTask extends PluginTask
     private $level, $height, $bottomBlock, $plotFillBlock, $plotFloorBlock,
             $plotBeginPos, $xMax, $zMax, $maxBlocksPerTick, $issuer;
 
-    public function __construct(MyPlot $plugin, Plot $plot, Player $issuer = null, $maxBlocksPerTick = 256) {
+    public function __construct(SkyBlock $plugin, Plot $plot, Player $issuer = null, $maxBlocksPerTick = 256) {
         parent::__construct($plugin);
         $this->plotBeginPos = $plugin->getPlotPosition($plot);
         $this->level = $this->plotBeginPos->getLevel();
