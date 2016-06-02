@@ -10,7 +10,7 @@ use pocketmine\math\Vector3;
 use pocketmine\block\Chest;
 use pocketmine\item\Item;
 use pocketmine\tile\Tile;
-use pocketmine\nbt\tag\Enum;
+use pocketmine\nbt\tag\EnumTag;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\NBT;
@@ -97,7 +97,7 @@ class ClaimSubCommand extends SubCommand{
 				$nbt->Items->setTagType(NBT::TAG_Compound);
 				$tile = Tile::createTile("Chest", $sender->getLevel()->getChunk(floor($position->getX()) >> 4, floor($position->getZ()) >> 4), $nbt);
 				
-				if(!($tile instanceof \pocketmine\tile\Chest)) continue;
+		 	if(!($tile instanceof \pocketmine\tile\Chest));
 				$tile->getInventory()->addItem(new Item(Item::ICE, 0, 2), new Item(Item::BUCKET, 10, 1), new Item(Item::MELON_SLICE, 0, 1), new Item(Item::CACTUS, 0, 1), new Item(Item::RED_MUSHROOM, 0, 1), new Item(Item::BROWN_MUSHROOM, 0, 1), new Item(Item::PUMPKIN_SEEDS, 0, 1), new Item(Item::SUGAR_CANE, 0, 1), new Item(Item::SIGN, 0, 1));
 				$sender->sendTip(TextFormat::GREEN . TextFormat::BOLD . "A new SkyBlock\n" . TextFormat::GOLD . "by thebigsmileXD");
 			}
